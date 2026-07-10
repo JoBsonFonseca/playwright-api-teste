@@ -10,7 +10,7 @@ test('consultar reservas cadastradas', async ({ request }) => {
 });
 
 test('consultar reservas cadastradas com id', async ({ request }) => {
-    const response = await request.get('/booking/1570');
+    const response = await request.get('/booking/118');
 
     const jsonBody = await response.json();
     expect(response.status()).toBe(200);
@@ -37,7 +37,7 @@ test('consultar as propriedas da id', async ({ request }) => {
     //vericando a respost da API 
     expect(response.ok()).toBeTruthy()
     expect(response.status()).toBe(200);
-});
+}); 
 
 test('cadastrar reserva', async ({ request }) => {
     const response = await request.post('/booking', {
@@ -102,7 +102,7 @@ data: {
   expect(ParcialReservaUpdate.status()).toBe(200);
 
   const parcialUpdateRespondeBody = await ParcialReservaUpdate.json()
-  
+
   expect(parcialUpdateRespondeBody).toHaveProperty("firstname","James")
   expect(parcialUpdateRespondeBody).toHaveProperty("lastname","Brow")
   expect(parcialUpdateRespondeBody).toHaveProperty("totalprice",111)
