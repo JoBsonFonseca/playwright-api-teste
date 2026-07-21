@@ -1,14 +1,4 @@
-// const desconto = 200
 
-// if(desconto ==100){
-// console.log("Desconto de 5%")
-// }
-// else if(desconto >100){
-//     console.log('Desconto de 20%')
-// }
-// else{
-//     console.log('Nenhum desconto disponivel')
-// }
 
 const nome = ["Eduardo","Maria","Fernado","João","Francisco"]
     for (let indice = 0; indice < nome.length; indice++) {
