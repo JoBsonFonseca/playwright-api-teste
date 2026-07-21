@@ -10,11 +10,11 @@ test('consultar reservas cadastradas', async ({ request }) => {
 });
 
 test('consultar reservas cadastradas com id', async ({ request }) => {
-    const response = await request.get('/booking/118');
+    const response = await request.get('/booking/302');
 
     const jsonBody = await response.json();
     expect(response.status()).toBe(200);
-    expect(jsonBody.firstname).toBe('Jobson')
+    expect(jsonBody.firstname).toBe('James')
     expect(jsonBody.lastname).toBe('Fonseca')
     expect(jsonBody.totalprice).toBe(111)
     expect(jsonBody.bookingdates.checkin).toBe("2018-01-01")
@@ -25,7 +25,7 @@ test('consultar reservas cadastradas com id', async ({ request }) => {
 });
 
 test('consultar as propriedas da id', async ({ request }) => {
-    const response = await request.get('/booking/1570');
+    const response = await request.get('/booking/2193');
 
     const jsonBody = await response.json();
     expect(jsonBody).toHaveProperty('firstname')
@@ -84,7 +84,7 @@ test('criar token e atualizar reserva', async ({ request }) => {
   console.log("Seu token é: " + tokenRecebido);
 
   // Atualizando reserva
-  const ParcialReservaUpdate = await request.patch('/booking/12', {
+  const ParcialReservaUpdate = await request.patch('/booking/302', {
 headers: {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
@@ -103,7 +103,7 @@ data: {
 
   const parcialUpdateRespondeBody = await ParcialReservaUpdate.json()
 
-  expect(parcialUpdateRespondeBody).toHaveProperty("firstname","James")
+  expect(parcialUpdateRespondeBody).toHaveProperty("firstname","Jobs")
   expect(parcialUpdateRespondeBody).toHaveProperty("lastname","Brow")
   expect(parcialUpdateRespondeBody).toHaveProperty("totalprice",111)
 });
